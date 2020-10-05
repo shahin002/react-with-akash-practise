@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import {Redirect, Switch, Route, withRouter, useLocation} from "react-router-dom";
+import routes from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const location = useLocation();
+    const [] = useState(false);
+    useEffect(() => {
+        const userData = localStorage.getItem("userData");
+        if (location.pathname !== '/') {
+            if (typeof userData === 'undefined' || userData === null) {
+                window.location.href = "/";
+            }
+        }
+    }, []);
+    return (
+        <div className="App">
+            <Switch>
+                {
+                    routes.map((route,index)=>(
+                        <Route
+                        key={index}
+                        path={route.path}
+                        name={route.name}
+                        component={route.component}
+                        />
+                    ))
+                }
+            </Switch>
+        </div>
+    );
 }
 
 export default App;
