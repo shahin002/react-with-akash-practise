@@ -1,17 +1,17 @@
-import "react-app-polyfill/ie11"
-import "react-app-polyfill/stable"
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from "react-router-dom";
-import HttpRedirect from "react-https-redirect";
-
-import {ToastContainer, toast} from "react-toastify";
+import "react-app-polyfill/ie11";
+import "react-app-polyfill/stable";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import HttpsRedirect from "react-https-redirect";
+import { ToastContainer, toast } from 'react-toastify';
 
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 // Import reducer
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
+
+// Import Store
 import store from "./redux/backend/Store";
 
 /*********** Start Import global CSS *************/
@@ -19,15 +19,16 @@ import './assets/dashboard/css/oneui.min.css';
 import "react-toastify/dist/ReactToastify.min.css";
 /***********  End Import global CSS **************/
 
-// toast.configure();
+import * as serviceWorker from './serviceWorker';
+toast.configure();
 
 ReactDOM.render(
     <Provider store={store}>
-        <HttpRedirect>
+        <HttpsRedirect>
             <BrowserRouter>
                 <App/>
             </BrowserRouter>
-        </HttpRedirect>
+        </HttpsRedirect>
         <ToastContainer />
     </Provider>,
     document.getElementById('root')

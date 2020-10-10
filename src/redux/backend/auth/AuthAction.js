@@ -9,9 +9,9 @@ export const loginSubmitAction = (postData) => async (dispatch) => {
         tokenData: null,
         userData: null
     };
-    dispatch({type: Types.AUTH_LOGIN_CHECK, payload: data});
+    dispatch({ type: Types.AUTH_LOGIN_CHECK, payload: data });
     await axios.post(`http://laravel07-starter.herokuapp.com/api/v1/sign-in`, postData)
-        .then((res)=>{
+        .then((res) => {
             const response = res.data;
             data.message = response.response.message;
             if(response.meta.status === 200){

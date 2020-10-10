@@ -4,11 +4,11 @@ import routes from "./routes";
 
 function App() {
     const location = useLocation();
-    const [] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     useEffect(() => {
         const userData = localStorage.getItem("userData");
-        if (location.pathname !== '/') {
-            if (typeof userData === 'undefined' || userData === null) {
+        if(location.pathname !== '/'){
+            if(typeof userData === 'undefined' ||  userData === null ){
                 window.location.href = "/";
             }
         }
