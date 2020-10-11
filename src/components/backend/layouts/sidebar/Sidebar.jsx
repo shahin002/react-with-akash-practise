@@ -15,38 +15,38 @@ const Sidebar = () => {
                     <div>
                         <div className="dropdown d-inline-block ml-2">
                             <a className="btn btn-sm btn-dual" id="sidebar-themes-dropdown" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="si si-drop"></i>
                             </a>
                             <div className="dropdown-menu dropdown-menu-right font-size-sm smini-hide border-0"
                                  aria-labelledby="sidebar-themes-dropdown">
                                 <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                   data-toggle="theme" data-theme="default" href="#">
+                                   data-toggle="theme" data-theme="default" href="/#">
                                     <span>Default</span>
                                     <i className="fa fa-circle text-default"></i>
                                 </a>
                                 <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                   data-toggle="theme" data-theme="assets/css/themes/amethyst.min.css" href="#">
+                                   data-toggle="theme" data-theme="assets/css/themes/amethyst.min.css" href="/#">
                                     <span>Amethyst</span>
                                     <i className="fa fa-circle text-amethyst"></i>
                                 </a>
                                 <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                   data-toggle="theme" data-theme="assets/css/themes/city.min.css" href="#">
+                                   data-toggle="theme" data-theme="assets/css/themes/city.min.css" href="/#">
                                     <span>City</span>
                                     <i className="fa fa-circle text-city"></i>
                                 </a>
                                 <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                   data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="#">
+                                   data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="/#">
                                     <span>Flat</span>
                                     <i className="fa fa-circle text-flat"></i>
                                 </a>
                                 <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                   data-toggle="theme" data-theme="assets/css/themes/modern.min.css" href="#">
+                                   data-toggle="theme" data-theme="assets/css/themes/modern.min.css" href="/#">
                                     <span>Modern</span>
                                     <i className="fa fa-circle text-modern"></i>
                                 </a>
                                 <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                   data-toggle="theme" data-theme="assets/css/themes/smooth.min.css" href="#">
+                                   data-toggle="theme" data-theme="assets/css/themes/smooth.min.css" href="/#">
                                     <span>Smooth</span>
                                     <i className="fa fa-circle text-smooth"></i>
                                 </a>
@@ -54,22 +54,22 @@ const Sidebar = () => {
                                 <div className="dropdown-divider"></div>
 
                                 <a className="dropdown-item" data-toggle="layout" data-action="sidebar_style_light"
-                                   href="#">
+                                   href="/#">
                                     <span>Sidebar Light</span>
                                 </a>
                                 <a className="dropdown-item" data-toggle="layout" data-action="sidebar_style_dark"
-                                   href="#">
+                                   href="/#">
                                     <span>Sidebar Dark</span>
                                 </a>
 
                                 <div className="dropdown-divider"></div>
 
                                 <a className="dropdown-item" data-toggle="layout" data-action="header_style_light"
-                                   href="#">
+                                   href="/#">
                                     <span>Header Light</span>
                                 </a>
                                 <a className="dropdown-item" data-toggle="layout" data-action="header_style_dark"
-                                   href="#">
+                                   href="/#">
                                     <span>Header Dark</span>
                                 </a>
                             </div>
@@ -92,14 +92,14 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-layers"></i>
                                 <span className="nav-main-link-name">Page Packs</span>
                             </a>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <i className="nav-main-link-icon si si-bag"></i>
                                         <span className="nav-main-link-name">e-Commerce</span>
                                     </a>
@@ -138,7 +138,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <i className="nav-main-link-icon si si-handbag"></i>
                                         <span className="nav-main-link-name">e-Commerce Store</span>
                                     </a>
@@ -172,7 +172,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <i className="nav-main-link-icon si si-pencil"></i>
                                         <span className="nav-main-link-name">Blog</span>
                                     </a>
@@ -206,7 +206,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <i className="nav-main-link-icon si si-graduation"></i>
                                         <span className="nav-main-link-name">e-Learning</span>
                                     </a>
@@ -230,7 +230,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <i className="nav-main-link-icon si si-bubbles"></i>
                                         <span className="nav-main-link-name">Forum</span>
                                     </a>
@@ -254,7 +254,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <i className="nav-main-link-icon si si-magnet"></i>
                                         <span className="nav-main-link-name">Boxed Backend</span>
                                     </a>
@@ -306,7 +306,7 @@ const Sidebar = () => {
                         <li className="nav-main-heading">User Interface</li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-energy"></i>
                                 <span className="nav-main-link-name">Blocks</span>
                             </a>
@@ -340,7 +340,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-badge"></i>
                                 <span className="nav-main-link-name">Elements</span>
                             </a>
@@ -444,7 +444,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-grid"></i>
                                 <span className="nav-main-link-name">Tables</span>
                             </a>
@@ -478,7 +478,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-note"></i>
                                 <span className="nav-main-link-name">Forms</span>
                             </a>
@@ -528,7 +528,7 @@ const Sidebar = () => {
                         <li className="nav-main-heading">Develop</li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-wrench"></i>
                                 <span className="nav-main-link-name">Components</span>
                             </a>
@@ -602,14 +602,14 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-magic-wand"></i>
                                 <span className="nav-main-link-name">Layout</span>
                             </a>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <span className="nav-main-link-name">Page</span>
                                     </a>
                                     <ul className="nav-main-submenu">
@@ -632,7 +632,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <span className="nav-main-link-name">Main Content</span>
                                     </a>
                                     <ul className="nav-main-submenu">
@@ -655,7 +655,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <span className="nav-main-link-name">Header</span>
                                     </a>
                                     <ul className="nav-main-submenu">
@@ -685,7 +685,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <span className="nav-main-link-name">Sidebar</span>
                                     </a>
                                     <ul className="nav-main-submenu">
@@ -713,7 +713,7 @@ const Sidebar = () => {
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <span className="nav-main-link-name">Side Overlay</span>
                                     </a>
                                     <ul className="nav-main-submenu">
@@ -744,85 +744,85 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-puzzle"></i>
                                 <span className="nav-main-link-name">Multi Level Menu</span>
                             </a>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="#">
+                                    <a className="nav-main-link" href="/#">
                                         <span className="nav-main-link-name">Link 1-1</span>
                                     </a>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="#">
+                                    <a className="nav-main-link" href="/#">
                                         <span className="nav-main-link-name">Link 1-2</span>
                                     </a>
                                 </li>
                                 <li className="nav-main-item">
                                     <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                       aria-haspopup="true" aria-expanded="false" href="/#">
                                         <span className="nav-main-link-name">Sub Level 2</span>
                                     </a>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="#">
+                                            <a className="nav-main-link" href="/#">
                                                 <span className="nav-main-link-name">Link 2-1</span>
                                             </a>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="#">
+                                            <a className="nav-main-link" href="/#">
                                                 <span className="nav-main-link-name">Link 2-2</span>
                                             </a>
                                         </li>
                                         <li className="nav-main-item">
                                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                               aria-haspopup="true" aria-expanded="false" href="#">
+                                               aria-haspopup="true" aria-expanded="false" href="/#">
                                                 <span className="nav-main-link-name">Sub Level 3</span>
                                             </a>
                                             <ul className="nav-main-submenu">
                                                 <li className="nav-main-item">
-                                                    <a className="nav-main-link" href="#">
+                                                    <a className="nav-main-link" href="/#">
                                                         <span className="nav-main-link-name">Link 3-1</span>
                                                     </a>
                                                 </li>
                                                 <li className="nav-main-item">
-                                                    <a className="nav-main-link" href="#">
+                                                    <a className="nav-main-link" href="/#">
                                                         <span className="nav-main-link-name">Link 3-2</span>
                                                     </a>
                                                 </li>
                                                 <li className="nav-main-item">
                                                     <a className="nav-main-link nav-main-link-submenu"
                                                        data-toggle="submenu" aria-haspopup="true" aria-expanded="false"
-                                                       href="#">
+                                                       href="/#">
                                                         <span className="nav-main-link-name">Sub Level 4</span>
                                                     </a>
                                                     <ul className="nav-main-submenu">
                                                         <li className="nav-main-item">
-                                                            <a className="nav-main-link" href="#">
+                                                            <a className="nav-main-link" href="/#">
                                                                 <span className="nav-main-link-name">Link 4-1</span>
                                                             </a>
                                                         </li>
                                                         <li className="nav-main-item">
-                                                            <a className="nav-main-link" href="#">
+                                                            <a className="nav-main-link" href="/#">
                                                                 <span className="nav-main-link-name">Link 4-2</span>
                                                             </a>
                                                         </li>
                                                         <li className="nav-main-item">
                                                             <a className="nav-main-link nav-main-link-submenu"
                                                                data-toggle="submenu" aria-haspopup="true"
-                                                               aria-expanded="false" href="#">
+                                                               aria-expanded="false" href="/#">
                                                                 <span className="nav-main-link-name">Sub Level 5</span>
                                                             </a>
                                                             <ul className="nav-main-submenu">
                                                                 <li className="nav-main-item">
-                                                                    <a className="nav-main-link" href="#">
+                                                                    <a className="nav-main-link" href="/#">
                                                                         <span
                                                                             className="nav-main-link-name">Link 5-1</span>
                                                                     </a>
                                                                 </li>
                                                                 <li className="nav-main-item">
-                                                                    <a className="nav-main-link" href="#">
+                                                                    <a className="nav-main-link" href="/#">
                                                                         <span
                                                                             className="nav-main-link-name">Link 5-2</span>
                                                                     </a>
@@ -830,18 +830,18 @@ const Sidebar = () => {
                                                                 <li className="nav-main-item">
                                                                     <a className="nav-main-link nav-main-link-submenu"
                                                                        data-toggle="submenu" aria-haspopup="true"
-                                                                       aria-expanded="false" href="#">
+                                                                       aria-expanded="false" href="/#">
                                                                         <span
                                                                             className="nav-main-link-name">Sub Level 6</span>
                                                                     </a>
                                                                     <ul className="nav-main-submenu">
                                                                         <li className="nav-main-item">
-                                                                            <a className="nav-main-link" href="#">
+                                                                            <a className="nav-main-link" href="/#">
                                                                                 <span className="nav-main-link-name">Link 6-1</span>
                                                                             </a>
                                                                         </li>
                                                                         <li className="nav-main-item">
-                                                                            <a className="nav-main-link" href="#">
+                                                                            <a className="nav-main-link" href="/#">
                                                                                 <span className="nav-main-link-name">Link 6-2</span>
                                                                             </a>
                                                                         </li>
@@ -860,7 +860,7 @@ const Sidebar = () => {
                         <li className="nav-main-heading">Pages</li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-layers"></i>
                                 <span className="nav-main-link-name">Generic</span>
                             </a>
@@ -944,7 +944,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-lock"></i>
                                 <span className="nav-main-link-name">Authentication</span>
                             </a>
@@ -998,7 +998,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-item">
                             <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                               aria-haspopup="true" aria-expanded="false" href="/#">
                                 <i className="nav-main-link-icon si si-fire"></i>
                                 <span className="nav-main-link-name">Error Pages</span>
                             </a>
