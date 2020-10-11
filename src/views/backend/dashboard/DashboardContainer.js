@@ -14,7 +14,7 @@ const DashboardContainer = () => {
                         </div>
                         <div className="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                     <span className="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                        <a className="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="javascript:void(0)">
+                                        <a className="btn btn-primary px-4 py-2" data-toggle="click-ripple" >
                                             <i className="fa fa-plus mr-1"></i> New Project
                                         </a>
                                     </span>
@@ -27,7 +27,7 @@ const DashboardContainer = () => {
             <div className="content content-narrow">
                 <div className="row">
                     <div className="col-6 col-md-3 col-lg-6 col-xl-3">
-                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" >
                             <div className="block-content block-content-full">
                                 <div className="font-size-sm font-w600 text-uppercase text-muted">Visitors</div>
                                 <div className="font-size-h2 font-w400 text-dark">120,580</div>
@@ -35,7 +35,7 @@ const DashboardContainer = () => {
                         </a>
                     </div>
                     <div className="col-6 col-md-3 col-lg-6 col-xl-3">
-                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" >
                             <div className="block-content block-content-full">
                                 <div className="font-size-sm font-w600 text-uppercase text-muted">Sales</div>
                                 <div className="font-size-h2 font-w400 text-dark">150</div>
@@ -43,7 +43,7 @@ const DashboardContainer = () => {
                         </a>
                     </div>
                     <div className="col-6 col-md-3 col-lg-6 col-xl-3">
-                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" >
                             <div className="block-content block-content-full">
                                 <div className="font-size-sm font-w600 text-uppercase text-muted">Earnings</div>
                                 <div className="font-size-h2 font-w400 text-dark">$3,200</div>
@@ -51,7 +51,7 @@ const DashboardContainer = () => {
                         </a>
                     </div>
                     <div className="col-6 col-md-3 col-lg-6 col-xl-3">
-                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                        <a className="block block-rounded block-link-pop border-left border-primary border-4x" >
                             <div className="block-content block-content-full">
                                 <div className="font-size-sm font-w600 text-uppercase text-muted">Avg Sale</div>
                                 <div className="font-size-h2 font-w400 text-dark">$21</div>
@@ -175,10 +175,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             Adam McCoy                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">5</a>
+                                            <a className="link-fx font-w600" >5</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -193,10 +193,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             Megan Fuller                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">14</a>
+                                            <a className="link-fx font-w600" >14</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -211,10 +211,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             David Fuller                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">15</a>
+                                            <a className="link-fx font-w600" >15</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -229,10 +229,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             Carol Ray                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">36</a>
+                                            <a className="link-fx font-w600" >36</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -247,10 +247,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             Henry Harrison                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">3</a>
+                                            <a className="link-fx font-w600" >3</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -265,10 +265,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             Lori Moore                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">1</a>
+                                            <a className="link-fx font-w600" >1</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -283,10 +283,10 @@ const DashboardContainer = () => {
                                         <td className="font-w600">
                                             Jose Mills                                </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <a className="link-fx font-w600" href="javascript:void(0)">12</a>
+                                            <a className="link-fx font-w600" >12</a>
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Edit">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -336,7 +336,7 @@ const DashboardContainer = () => {
                                             $999,99
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -355,7 +355,7 @@ const DashboardContainer = () => {
                                             $2.299,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -374,7 +374,7 @@ const DashboardContainer = () => {
                                             $1200,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -393,7 +393,7 @@ const DashboardContainer = () => {
                                             $399,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -412,7 +412,7 @@ const DashboardContainer = () => {
                                             $349,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -431,7 +431,7 @@ const DashboardContainer = () => {
                                             $999,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -450,7 +450,7 @@ const DashboardContainer = () => {
                                             $39,99
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -469,7 +469,7 @@ const DashboardContainer = () => {
                                             $499,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>
@@ -488,7 +488,7 @@ const DashboardContainer = () => {
                                             $325,00
                                         </td>
                                         <td className="text-center">
-                                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
+                                            <a  data-toggle="tooltip" data-placement="left" title="Manage">
                                                 <i className="fa fa-fw fa-pencil-alt"></i>
                                             </a>
                                         </td>

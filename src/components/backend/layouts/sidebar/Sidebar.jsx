@@ -76,7 +76,7 @@ const Sidebar = () => {
                         </div>
 
                         <a className="d-lg-none btn btn-sm btn-dual ml-2" data-toggle="layout"
-                           data-action="sidebar_close" href="javascript:void(0)">
+                           data-action="sidebar_close">
                             <i className="fa fa-fw fa-times"></i>
                         </a>
                     </div>

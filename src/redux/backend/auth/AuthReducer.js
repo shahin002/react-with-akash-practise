@@ -14,6 +14,8 @@ const AuthReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case Types.AUTH_LOGIN_CHECK:
+            localStorage.setItem('userData', JSON.stringify(action.payload.userData));
+            localStorage.setItem('tokenData', action.payload.tokenData);
             return {
                 ...state,
                 isLoggedIn: action.payload.status,

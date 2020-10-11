@@ -73,7 +73,7 @@ const PageHeader = () => {
                                         </span>
                                     </a>
                                     <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="javascript:void(0)">
+                                    >
                                         <span>Settings</span>
                                         <i className="si si-settings"></i>
                                     </a>
@@ -108,7 +108,7 @@ const PageHeader = () => {
                                 </div>
                                 <ul className="nav-items mb-0">
                                     <li>
-                                        <a className="text-dark media py-2" href="javascript:void(0)">
+                                        <a className="text-dark media py-2">
                                             <div className="mr-2 ml-3">
                                                 <i className="fa fa-fw fa-check-circle text-success"></i>
                                             </div>
@@ -119,7 +119,7 @@ const PageHeader = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-dark media py-2" href="javascript:void(0)">
+                                        <a className="text-dark media py-2">
                                             <div className="mr-2 ml-3">
                                                 <i className="fa fa-fw fa-plus-circle text-info"></i>
                                             </div>
@@ -130,7 +130,7 @@ const PageHeader = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-dark media py-2" href="javascript:void(0)">
+                                        <a className="text-dark media py-2">
                                             <div className="mr-2 ml-3">
                                                 <i className="fa fa-fw fa-times-circle text-danger"></i>
                                             </div>
@@ -141,7 +141,7 @@ const PageHeader = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-dark media py-2" href="javascript:void(0)">
+                                        <a className="text-dark media py-2">
                                             <div className="mr-2 ml-3">
                                                 <i className="fa fa-fw fa-plus-circle text-info"></i>
                                             </div>
@@ -152,7 +152,7 @@ const PageHeader = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-dark media py-2" href="javascript:void(0)">
+                                        <a className="text-dark media py-2">
                                             <div className="mr-2 ml-3">
                                                 <i className="fa fa-fw fa-user-plus text-success"></i>
                                             </div>
@@ -163,7 +163,7 @@ const PageHeader = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-dark media py-2" href="javascript:void(0)">
+                                        <a className="text-dark media py-2">
                                             <div className="mr-2 ml-3">
                                                 <i className="fa fa-fw fa-check-circle text-success"></i>
                                             </div>
@@ -175,7 +175,7 @@ const PageHeader = () => {
                                     </li>
                                 </ul>
                                 <div className="p-2 border-top">
-                                    <a className="btn btn-sm btn-light btn-block text-center" href="javascript:void(0)">
+                                    <a className="btn btn-sm btn-light btn-block text-center">
                                         <i className="fa fa-fw fa-arrow-down mr-1"></i> Load More..
                                     </a>
                                 </div>
