@@ -15,7 +15,6 @@ import { Provider } from "react-redux";
 import store from "./redux/backend/Store";
 
 /*********** Start Import global CSS *************/
-import './assets/dashboard/css/oneui.min.css';
 import "react-toastify/dist/ReactToastify.min.css";
 /***********  End Import global CSS **************/
 

@@ -7,11 +7,11 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     useEffect(() => {
         const userData = localStorage.getItem("userData");
-        if(location.pathname !== '/'){
-            if(typeof userData === 'undefined' ||  userData === null ){
-                window.location.href = "/";
-            }
-        }
+        // if(location.pathname !== '/'){
+        //     if(typeof userData === 'undefined' ||  userData === null ){
+        //         window.location.href = "/";
+        //     }
+        // }
     }, []);
     return (
         <div className="App">
@@ -23,6 +23,7 @@ function App() {
                         path={route.path}
                         name={route.name}
                         component={route.component}
+                        exact={route.exact}
                         />
                     ))
                 }

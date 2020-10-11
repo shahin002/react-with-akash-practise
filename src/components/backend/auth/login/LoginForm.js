@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { useForm } from "react-hook-form";
-import { withRouter } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
-import { loginSubmitAction } from '../../../../redux/backend/auth/AuthAction';
+import React, {useEffect} from 'react';
+import {useForm} from "react-hook-form";
+import {withRouter} from 'react-router-dom';
+import {useSelector, useDispatch} from "react-redux";
+import {toast} from "react-toastify";
+import {loginSubmitAction} from '../../../../redux/backend/auth/AuthAction';
 
-const LoginForm = withRouter(({ history, props }) => {
-    const { register, handleSubmit, errors } = useForm();
+const LoginForm = withRouter(({history, props}) => {
+    const {register, handleSubmit, errors} = useForm();
     const dispatch = useDispatch();
     const isLoading = useSelector((state) => state.auth.isLoading);
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const loginMessage = useSelector((state) => state.auth.loginMessage);
 
     useEffect(() => {
-        if (typeof loginMessage === null || typeof loginMessage === 'undefined') {
+        if (typeof loginMessage === 'undefined' || loginMessage === null) {
             toast.error("Something Went Wrong", {
                 autoClose: 2000,
                 className: "dangerColor",
@@ -36,7 +36,7 @@ const LoginForm = withRouter(({ history, props }) => {
                 });
             }
         }
-    }, [isLoggedIn, loginMessage]);
+    }, [isLoggedIn, loginMessage, history]);
 
     const submitHandler = (data) => {
         dispatch(loginSubmitAction(data));
@@ -81,8 +81,10 @@ const LoginForm = withRouter(({ history, props }) => {
                     </div>
                     <div className="form-group">
                         <div className="custom-control custom-checkbox">
-                            <input type="checkbox" className="custom-control-input" id="login-remember" name="login-remember" />
-                            <label className="custom-control-label font-w400" htmlFor="login-remember">Remember Me</label>
+                            <input type="checkbox" className="custom-control-input" id="login-remember"
+                                   name="login-remember"/>
+                            <label className="custom-control-label font-w400" htmlFor="login-remember">Remember
+                                Me</label>
                         </div>
                     </div>
                 </div>
@@ -96,7 +98,8 @@ const LoginForm = withRouter(({ history, props }) => {
                         }
                         {
                             !isLoading &&
-                            <button type="submit" className="btn btn-block btn-primary" onSubmit={() => submitHandler()}>
+                            <button type="submit" className="btn btn-block btn-primary"
+                                    onSubmit={() => submitHandler()}>
                                 <i className="fa fa-fw fa-sign-in-alt mr-1"></i> Sign In
                             </button>
                         }
