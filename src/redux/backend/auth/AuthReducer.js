@@ -6,6 +6,7 @@ const initialState = {
     authUserData: {},
     authTokenData: {},
     loginMessage: "",
+    registerMessage: "",
     isLoading: false
 };
 
@@ -22,6 +23,17 @@ const AuthReducer = (state = initialState, action) => {
                 authUserData: action.payload.userData,
                 authTokenData: action.payload.tokenData,
                 loginMessage: action.payload.message,
+                isLoading: action.payload.isLoading
+            };
+        case Types.AUTH_REGISTER_SUBMIT:
+            localStorage.setItem('userData', JSON.stringify(action.payload.userData));
+            localStorage.setItem('tokenData', action.payload.tokenData);
+            return {
+                ...state,
+                isLoggedIn: action.payload.status,
+                authUserData: action.payload.userData,
+                authTokenData: action.payload.tokenData,
+                registerMessage: action.payload.message,
                 isLoading: action.payload.isLoading
             };
         case Types.AUTH_GET_LOGIN_DATA:
