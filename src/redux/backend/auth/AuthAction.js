@@ -80,6 +80,18 @@ export const getAuthenticatedProfileInformationAction = () => async (dispatch) =
     dispatch({ type: Types.GET_AUTH_DATA, payload: data });
 };
 
+export const logoutAuthenticatedUser = () => async (dispatch) => {
+    let data = {
+        status: false,
+        tokenData: null,
+        userData: null
+    };
+
+    localStorage.removeItem('userData');
+    localStorage.removeItem('tokenData');
+    dispatch({ type: Types.LOGOUT_AUTH, payload: data });
+};
+
 async function getUserInformation(token) {
     let userInfo = {};
     const headerData = {

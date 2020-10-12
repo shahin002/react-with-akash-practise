@@ -1,4 +1,4 @@
-import * as Types  from "../Types";
+import * as Types from "../Types";
 
 // Initial state
 const initialState = {
@@ -7,11 +7,12 @@ const initialState = {
     authTokenData: {},
     loginMessage: "",
     registerMessage: "",
-    isLoading: false
+    isLoading: false,
+    submitLogout:false
 };
 
 const AuthReducer = (state = initialState, action) => {
-    const newState = { ...state };
+    const newState = {...state};
 
     switch (action.type) {
         case Types.AUTH_LOGIN_CHECK:
@@ -53,12 +54,20 @@ const AuthReducer = (state = initialState, action) => {
                 authTokenData: authTokenData
             };
         case Types.GET_AUTH_DATA:
-
             return {
                 ...state,
                 isLoggedIn: action.payload.status,
                 authUserData: action.payload.userData,
                 authTokenData: action.payload.tokenData,
+            };
+
+        case Types.LOGOUT_AUTH:
+            return {
+                ...state,
+                isLoggedIn: action.payload.status,
+                authUserData: action.payload.userData,
+                authTokenData: action.payload.tokenData,
+                submitLogout: true
             };
         case Types.AUTH_POST_LOGOUT:
             return {

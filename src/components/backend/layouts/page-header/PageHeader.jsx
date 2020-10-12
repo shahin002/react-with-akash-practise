@@ -1,7 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import AuthUserInfo from "./AuthUserInfo";
+import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {logoutAuthenticatedUser} from "../../../../redux/backend/auth/AuthAction";
 
 const PageHeader = () => {
+    const dispatch = useDispatch();
+    const isLoggedIn = useSelector((state)=>state.auth.isLoggedIn);
+    const submitLogout = useSelector((state)=>state.auth.submitLogout);
+
+    function logout() {
+        dispatch(logoutAuthenticatedUser());
+    }
+
+    useEffect(()=>{
+       if (!isLoggedIn && submitLogout){
+           window.location.href="/";
+       }
+    },[isLoggedIn,submitLogout]);
     return (
         <>
             <header id="page-header">
@@ -30,7 +46,7 @@ const PageHeader = () => {
                         <form className="d-none d-sm-inline-block" action="be_pages_generic_search.html" method="POST">
                             <div className="input-group input-group-sm">
                                 <input type="text" className="form-control form-control-alt" placeholder="Search.."
-                                       id="page-header-search-input2" name="page-header-search-input2" />
+                                       id="page-header-search-input2" name="page-header-search-input2"/>
                                 <div className="input-group-append">
                                         <span className="input-group-text bg-body border-0">
                                             <i className="si si-magnifier"></i>
@@ -44,7 +60,7 @@ const PageHeader = () => {
                         <div className="dropdown d-inline-block ml-2">
                             <button type="button" className="btn btn-sm btn-dual" id="page-header-user-dropdown"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <AuthUserInfo isAvatar={true} isName={true}  />
+                                <AuthUserInfo isAvatar={true} isName={true}/>
                                 <i className="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
                             </button>
                             <div className="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm"
@@ -56,11 +72,11 @@ const PageHeader = () => {
                                 <div className="p-2">
                                     <h5 className="dropdown-header text-uppercase">User Options</h5>
 
-                                    <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="op_auth_signin.html">
+                                    <Link className="dropdown-item d-flex align-items-center justify-content-between"
+                                          onClick={() => logout()}>
                                         <span>Log Out</span>
                                         <i className="si si-logout ml-1"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +188,7 @@ const PageHeader = () => {
                                     </button>
                                 </div>
                                 <input type="text" className="form-control" placeholder="Search or hit ESC.."
-                                       id="page-header-search-input" name="page-header-search-input" />
+                                       id="page-header-search-input" name="page-header-search-input"/>
                             </div>
                         </form>
                     </div>
@@ -187,7 +203,7 @@ const PageHeader = () => {
                 </div>
             </header>
         </>
-);
+    );
 };
 
 export default PageHeader;

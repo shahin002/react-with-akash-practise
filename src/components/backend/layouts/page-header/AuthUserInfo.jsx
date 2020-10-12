@@ -6,7 +6,6 @@ const AuthUserInfo = (props) => {
     const dispatch = useDispatch();
     const authUserData = useSelector((state) => state.auth.authUserData);
     const {isAvatar, isName} = props;
-    console.log("authUserData",authUserData);
     useEffect(() => {
         dispatch(getAuthenticatedProfileInformationAction());
     }, []);
