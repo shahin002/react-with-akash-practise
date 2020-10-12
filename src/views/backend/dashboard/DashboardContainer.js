@@ -4,7 +4,7 @@ import MainLayout from "../../../components/backend/layouts/base-content/MainLay
 const DashboardContainer = () => {
     return (
         <MainLayout>
-            <div className="bg-image overflow-hidden" style={{backgroundImage: "url('assets/media/photos/photo3@2x.jpg')"}}>
+            <div className="bg-image overflow-hidden" style={{backgroundImage: "url('/assets/dashboard/media/photos/photo3@2x.jpg')"}}>
             <div className="bg-primary-dark-op">
                 <div className="content content-narrow content-full">
                     <div className="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
@@ -170,7 +170,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar16.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar16.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             Adam McCoy                                </td>
@@ -188,7 +188,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar1.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar1.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             Megan Fuller                                </td>
@@ -206,7 +206,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar11.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar11.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             David Fuller                                </td>
@@ -224,7 +224,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar2.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar2.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             Carol Ray                                </td>
@@ -242,7 +242,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar12.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar12.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             Henry Harrison                                </td>
@@ -260,7 +260,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar3.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar3.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             Lori Moore                                </td>
@@ -278,7 +278,7 @@ const DashboardContainer = () => {
                                             <span className="font-w600">#01368</span>
                                         </td>
                                         <td className="d-none d-sm-table-cell text-center">
-                                            <img className="img-avatar img-avatar32" src="assets/media/avatars/avatar12.jpg" alt="" />
+                                            <img className="img-avatar img-avatar32" src="/assets/dashboard/media/avatars/avatar12.jpg" alt="" />
                                         </td>
                                         <td className="font-w600">
                                             Jose Mills                                </td>

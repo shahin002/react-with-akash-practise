@@ -62,6 +62,23 @@ export const registerSubmitAction = (postData) => async (dispatch) => {
     data.isLoading = false;
     dispatch({type: Types.AUTH_REGISTER_SUBMIT, payload: data});
 };
+export const getAuthenticatedProfileInformationAction = () => async (dispatch) => {
+    let data = {
+        status: false,
+        tokenData: null,
+        userData: null
+    };
+
+    const userData = localStorage.getItem('userData');
+    const tokenData = localStorage.getItem('tokenData');
+
+    if(userData != null && tokenData != null){
+        data.status = true;
+        data.userData = JSON.parse(userData);
+        data.tokenData = tokenData;
+    }
+    dispatch({ type: Types.GET_AUTH_DATA, payload: data });
+};
 
 async function getUserInformation(token) {
     let userInfo = {};

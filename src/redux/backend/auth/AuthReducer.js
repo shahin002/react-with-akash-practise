@@ -52,6 +52,14 @@ const AuthReducer = (state = initialState, action) => {
                 authUserData: authUserData,
                 authTokenData: authTokenData
             };
+        case Types.GET_AUTH_DATA:
+
+            return {
+                ...state,
+                isLoggedIn: action.payload.status,
+                authUserData: action.payload.userData,
+                authTokenData: action.payload.tokenData,
+            };
         case Types.AUTH_POST_LOGOUT:
             return {
                 ...state,
