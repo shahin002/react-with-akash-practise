@@ -11,9 +11,12 @@ const MainLayout = (props) => {
                 <Sidebar/>
                 <PageHeader/>
                 <main id="main-container">
-                    {props.children && props.children}
+                    <>
+                        {props.children && props.children}
+                    </>
+
                 </main>
-                <Footer />
+                <Footer/>
 
             </div>
 

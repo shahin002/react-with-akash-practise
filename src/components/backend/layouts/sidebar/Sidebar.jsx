@@ -42,7 +42,7 @@ const Sidebar = () => {
                                             </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <Link className="nav-main-link" >
+                                            <Link to="/posts/create" className="nav-main-link" >
                                                 <span className="nav-main-link-name">Post Create</span>
                                             </Link>
                                         </li>
