@@ -72,11 +72,11 @@ const PageHeader = () => {
                                 <div className="p-2">
                                     <h5 className="dropdown-header text-uppercase">User Options</h5>
 
-                                    <Link className="dropdown-item d-flex align-items-center justify-content-between"
+                                    <span className="dropdown-item link d-flex align-items-center justify-content-between"
                                           onClick={() => logout()}>
                                         <span>Log Out</span>
                                         <i className="si si-logout ml-1"></i>
-                                    </Link>
+                                    </span>
                                 </div>
                             </div>
                         </div>

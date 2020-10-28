@@ -1,12 +1,13 @@
 import * as Types from '../Types';
 import axios from 'axios';
+import {toast} from 'react-toastify';
 
 export const loginSubmitAction = (postData) => async (dispatch) => {
     let data = {
         status: false,
         message: "",
         isLoading: true,
-        tokenData: null,
+        access_token: null,
         userData: null
     };
     dispatch({type: Types.AUTH_LOGIN_CHECK, payload: data});
@@ -16,10 +17,14 @@ export const loginSubmitAction = (postData) => async (dispatch) => {
             data.message = response.response.message;
             if (response.meta.status === 200) {
                 data.status = true;
-                data.tokenData = response.response.token;
+                data.access_token = response.response.token;
+
+                // Store it to local storage
+                localStorage.setItem('access_token', response.response.token);
 
                 // fetch and ger the user information and set to local storage
-                data.userData=await getUserInformation(response.response.token);
+                data.userData = await getUserInformation();
+                localStorage.setItem('userData', JSON.stringify(data.userData));
             } else {
                 data.status = false;
             }
@@ -27,6 +32,12 @@ export const loginSubmitAction = (postData) => async (dispatch) => {
         .catch((err) => {
             data.message = err.data;
         });
+
+    if (data.status) {
+        toast.success(data.message);
+    } else {
+        toast.error(data.message);
+    }
 
     data.isLoading = false;
     dispatch({type: Types.AUTH_LOGIN_CHECK, payload: data});
@@ -36,7 +47,7 @@ export const registerSubmitAction = (postData) => async (dispatch) => {
         status: false,
         message: "",
         isLoading: true,
-        tokenData: null,
+        access_token: null,
         userData: null
     };
     dispatch({type: Types.AUTH_REGISTER_SUBMIT, payload: data});
@@ -46,10 +57,15 @@ export const registerSubmitAction = (postData) => async (dispatch) => {
             data.message = response.response.message;
             if (response.meta.status === 200) {
                 data.status = true;
-                data.tokenData = response.response.token;
+                data.access_token = response.response.token;
                 data.message = "Account Created Successfully";
+
+                // Store it to local storage
+                localStorage.setItem('access_token', response.response.token);
+
                 // fetch and ger the user information and set to local storage
-                data.userData=await getUserInformation(response.response.token);
+                data.userData = await getUserInformation();
+                localStorage.setItem('userData', JSON.stringify(data.userData));
             } else {
                 data.status = false;
                 data.message = response.response.message;
@@ -65,43 +81,36 @@ export const registerSubmitAction = (postData) => async (dispatch) => {
 export const getAuthenticatedProfileInformationAction = () => async (dispatch) => {
     let data = {
         status: false,
-        tokenData: null,
+        access_token: null,
         userData: null
     };
 
     const userData = localStorage.getItem('userData');
-    const tokenData = localStorage.getItem('tokenData');
+    const access_token = localStorage.getItem('access_token');
 
-    if(userData != null && tokenData != null){
+    if (userData != null && access_token != null) {
         data.status = true;
         data.userData = JSON.parse(userData);
-        data.tokenData = tokenData;
+        data.access_token = access_token;
     }
-    dispatch({ type: Types.GET_AUTH_DATA, payload: data });
+    dispatch({type: Types.GET_AUTH_DATA, payload: data});
 };
 
 export const logoutAuthenticatedUser = () => async (dispatch) => {
     let data = {
         status: false,
-        tokenData: null,
+        access_token: null,
         userData: null
     };
 
     localStorage.removeItem('userData');
-    localStorage.removeItem('tokenData');
-    dispatch({ type: Types.LOGOUT_AUTH, payload: data });
+    localStorage.removeItem('access_token');
+    dispatch({type: Types.LOGOUT_AUTH, payload: data});
 };
 
-async function getUserInformation(token) {
+async function getUserInformation() {
     let userInfo = {};
-    const headerData = {
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-type": "Application/json",
-            "Authorization": token
-        }
-    }
-    await axios.get(`http://laravel07-starter.herokuapp.com/api/v1/user-info`, headerData)
+    await axios.get(`http://laravel07-starter.herokuapp.com/api/v1/user-info`)
         .then((res) => {
             const response = res.data;
             if (response.meta.status === 200) {
@@ -109,7 +118,7 @@ async function getUserInformation(token) {
             }
         })
         .catch((err) => {
-
+            console.log('profile fetch err', err);
         });
     return userInfo;
 }
