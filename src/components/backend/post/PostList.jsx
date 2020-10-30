@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getPostAction} from "../../../redux/backend/post/PostAction";
+import Swal from 'sweetalert2';
+import {deletePostAction, getPostAction} from "../../../redux/backend/post/PostAction";
 
 const PostList = () => {
     const dispatch = useDispatch();
@@ -9,7 +10,25 @@ const PostList = () => {
 
     useEffect(() => {
         dispatch(getPostAction());
-    },[])
+    },[]);
+    const editPost=(post)=>{
+        console.log('post',post);
+    }
+    const deletePost=(id)=>{
+        Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            showConfirmButton: true,
+            confirmButtonText: 'Yes, Delete',
+            showCancelButton: true,
+            cancelButtonText: 'No'
+        },function(isConfirm){
+            if (isConfirm){
+                dispatch(deletePostAction(id));
+            }
+        })
+    }
     return (
         <>
             {
@@ -37,7 +56,10 @@ const PostList = () => {
                                 <td>{post.title}</td>
                                 <td>{post.body}</td>
                                 <td>
-                                    <button className="btn btn-sanger">
+                                    <button className="btn btn-sanger" onClick={()=>editPost(post)}>
+                                        <i className="fa fa-edit"></i>
+                                    </button>
+                                    <button className="btn btn-sanger" onClick={()=>deletePost(post.id)}>
                                         <i className="fa fa-trash"></i>
                                     </button>
                                 </td>

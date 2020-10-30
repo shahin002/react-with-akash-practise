@@ -9,7 +9,10 @@ const initialState = {
     postAddMessage: "",
 
     postUpdateStatus: false,
-    postUpdateMessage: ""
+    postUpdateMessage: "",
+
+    postDeleteStatus: false,
+    postDeleteMessage: "",
 };
 
 const PostReducer = (state = initialState, action) => {
@@ -28,27 +31,16 @@ const PostReducer = (state = initialState, action) => {
                 postAddMessage: action.payload.message,
                 isLoading: action.payload.isLoading
             };
-        case Types.POST_SHOW:
+        case Types.POST_DELETE:
+            const deletedID=action.payload.data;
+            const updatedPostList = state.postList.filter((x) => x.id != deletedID);
             return {
                 ...state,
-                postList: [],
-                isLoading: false,
-                postAddStatus: false,
-                postAddMessage: "",
-                postUpdateStatus: false,
-                postUpdateMessage: ""
+                postList: updatedPostList,
+                postDeleteStatus: action.payload.status,
+                postDeleteMessage: action.payload.message,
             };
         case Types.POST_UPDATE:
-            return {
-                ...state,
-                postList: [],
-                isLoading: false,
-                postAddStatus: false,
-                postAddMessage: "",
-                postUpdateStatus: false,
-                postUpdateMessage: ""
-            };
-        case Types.POST_DELETE:
             return {
                 ...state,
                 postList: [],

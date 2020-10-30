@@ -60,3 +60,42 @@ export const storePostAction = (postData) => async (dispatch) => {
     data.isLoading = false;
     dispatch({ type: Types.POST_CREATE, payload: data });
 };
+
+/**
+ * delete post by id
+ *
+ * @param {integer} id
+ */
+export const deletePostAction = (id) => async (dispatch) => {
+    let data = {
+        status: false,
+        message: "",
+        isLoading: true,
+        data: [],
+    };
+
+    dispatch({ type: Types.POST_DELETE, payload: data });
+
+    await axios
+        .delete(
+            `http://laravel07-starter.herokuapp.com/api/v1/administrator/posts/${id}`
+        )
+        .then(async (res) => {
+            const response = res.data;
+            data.data = id;
+            data.message = res.data.response.message;
+            if (response.meta.status === 200) {
+                data.status = true;
+                toast.success(data.message);
+            } else {
+                data.status = false;
+                toast.error(data.message);
+            }
+        })
+        .catch((err) => {
+            data.message = err.data;
+        });
+
+    data.isLoading = false;
+    dispatch({ type: Types.POST_DELETE, payload: data });
+};
