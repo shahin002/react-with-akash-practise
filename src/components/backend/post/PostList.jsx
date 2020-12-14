@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import Swal from 'sweetalert2';
 import {deletePostAction, getPostAction} from "../../../redux/backend/post/PostAction";
+import {Link} from "react-router-dom";
 
 const PostList = () => {
     const dispatch = useDispatch();
@@ -16,15 +17,15 @@ const PostList = () => {
     }
     const deletePost=(id)=>{
         Swal.fire({
-            title: 'Error!',
+            title: 'Delete!',
             text: 'Do you want to continue',
-            icon: 'error',
+            icon: 'warning',
             showConfirmButton: true,
             confirmButtonText: 'Yes, Delete',
             showCancelButton: true,
             cancelButtonText: 'No'
-        },function(isConfirm){
-            if (isConfirm){
+        }).then((result) => {
+            if (result.isConfirmed) {
                 dispatch(deletePostAction(id));
             }
         })
@@ -56,9 +57,9 @@ const PostList = () => {
                                 <td>{post.title}</td>
                                 <td>{post.body}</td>
                                 <td>
-                                    <button className="btn btn-sanger" onClick={()=>editPost(post)}>
+                                    <Link className="btn btn-sanger" to={`/posts/edit/${post.id}`}>
                                         <i className="fa fa-edit"></i>
-                                    </button>
+                                    </Link>
                                     <button className="btn btn-sanger" onClick={()=>deletePost(post.id)}>
                                         <i className="fa fa-trash"></i>
                                     </button>

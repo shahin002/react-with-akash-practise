@@ -13,4 +13,6 @@ export const POST_SHOW = "POST_SHOW";
 export const POST_CREATE = "POST_CREATE";
 export const POST_UPDATE = "POST_UPDATE";
 export const POST_DELETE = "POST_DELETE";
+export const CHANGE_POST_INPUT = "CHANGE_POST_INPUT";
+export const EMPTY_POST_MESSAGE = "EMPTY_POST_MESSAGE";
 /*************** Post Types  ******************/

@@ -3,7 +3,7 @@ import {useForm} from "react-hook-form";
 import {withRouter} from 'react-router-dom';
 import {useSelector, useDispatch} from "react-redux";
 import {toast} from "react-toastify";
-import {storePostAction} from "../../../redux/backend/post/PostAction";
+import {handleChangePostInput, storePostAction} from "../../../redux/backend/post/PostAction";
 
 
 const PostCreate = ({history, props}) => {
@@ -12,19 +12,27 @@ const PostCreate = ({history, props}) => {
     const isLoading = useSelector((state) => state.post.isLoading);
     const postAddMessage = useSelector((state) => state.post.postAddMessage);
     const postAddStatus = useSelector((state) => state.post.postAddStatus);
+    const postData = useSelector((state) => state.post.postData);
 
-    const submitHandler = (data) => {
-        dispatch(storePostAction(data));
+    const submitHandler = () => {
+        dispatch(storePostAction(postData));
     }
+
+    const handleChangeTextInput = (name, value) => {
+        dispatch(handleChangePostInput(name, value));
+    };
 
     useEffect(() => {
         if (typeof postAddMessage !== 'undefined' || postAddMessage !== null) {
-            // history.push("/posts");
-            // We can push to list OR, make feilds empty.
-            reset({
-                title: "",
-                body: ""
-            });
+            if (postAddStatus && postAddMessage.length > 0) {
+                // history.push("/posts");
+                // We can push to list OR, make feilds empty.
+                reset({
+                    title: "",
+                    body: ""
+                });
+                history.push("/posts");
+            }
         }
     }, [postAddStatus, postAddMessage, history]);
 
@@ -74,6 +82,8 @@ const PostCreate = ({history, props}) => {
                                                        ref={register({
                                                            required: 'Please give post title'
                                                        })}
+                                                       onChange={(e) => handleChangeTextInput('title', e.target.value)}
+                                                       value={postData.title}
                                                        autoComplete="name"
                                                 />
                                                 {
@@ -100,6 +110,8 @@ const PostCreate = ({history, props}) => {
                                                     ref={register({
                                                         required: "Please give post description."
                                                     })}
+                                                    onChange={(e) => handleChangeTextInput('body', e.target.value)}
+                                                    value={postData.body}
                                                 ></textarea>
                                                 {
                                                     errors.body &&
@@ -112,7 +124,18 @@ const PostCreate = ({history, props}) => {
 
                                     <div className="form-group">
                                         <div className="col-sm-9">
-                                            <button className="btn btn-sm btn-primary" type="submit">Submit</button>
+                                            {
+                                                !isLoading &&
+                                                <button className="btn btn-sm btn-primary" type="submit">
+                                                    Submit
+                                                </button>
+                                            }
+                                            {
+                                                isLoading &&
+                                                <button className="btn btn-sm btn-primary" type="button" disabled>
+                                                    Submitting ...
+                                                </button>
+                                            }
                                         </div>
                                     </div>
                                 </form>

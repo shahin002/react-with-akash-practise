@@ -3,6 +3,7 @@ import RegisterContainer from "../views/backend/auth/RegisterContainer";
 import DashboardContainer from "../views/backend/dashboard/DashboardContainer";
 import PostListContainer from "../views/backend/post/PostListContainer";
 import PostAddContainer from "../views/backend/post/PostAddContainer";
+import PostEditContainer from "../views/backend/post/PostEditContainer";
 
 const routes = [
     {
@@ -35,6 +36,12 @@ const routes = [
         path: "/posts/create",
         name: "Post Create Component",
         component: PostAddContainer,
+        exact: true,
+    },
+    {
+        path: "/posts/edit/:id",
+        name: "Post Edit Component",
+        component: PostEditContainer,
         exact: true,
     },
 ]

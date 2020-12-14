@@ -31,6 +31,44 @@ export const getPostAction = () => async (dispatch) => {
     dispatch({ type: Types.POST_LIST, payload: data });
 };
 
+
+export const getPostDetailAction = (id) => async (dispatch) => {
+    let data = {
+        status: false,
+        message: "",
+        isLoading: true,
+        data: []
+    };
+
+    dispatch({ type: Types.POST_SHOW, payload: data });
+
+    await axios.get(`http://laravel07-starter.herokuapp.com/api/v1/administrator/posts/${id}`)
+        .then(async (res) => {
+            const response = res.data;
+            data.data = res.data.response.post;
+            data.message = res.data.response.message;
+            if(response.meta.status === 200){
+                data.status = true;
+            }else{
+                data.status = false;
+            }
+        })
+        .catch((err) => {
+            data.message = err.data;
+        });
+
+    data.isLoading = false;
+    dispatch({ type: Types.POST_SHOW, payload: data });
+};
+
+export const handleChangePostInput = (name, value) => (dispatch) => {
+    let data = {
+        name: name,
+        value: value,
+    }
+    dispatch({ type: Types.CHANGE_POST_INPUT, payload: data });
+};
+
 export const storePostAction = (postData) => async (dispatch) => {
     let data = {
         status: false,

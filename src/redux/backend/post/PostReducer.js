@@ -13,6 +13,11 @@ const initialState = {
 
     postDeleteStatus: false,
     postDeleteMessage: "",
+    postData: {
+        id: 0,
+        title: '',
+        body: ''
+    }
 };
 
 const PostReducer = (state = initialState, action) => {
@@ -30,6 +35,19 @@ const PostReducer = (state = initialState, action) => {
                 postAddStatus: action.payload.status,
                 postAddMessage: action.payload.message,
                 isLoading: action.payload.isLoading
+            };
+        case Types.POST_SHOW:
+            return {
+                ...state,
+                postData: action.payload.data,
+            };
+
+        case Types.CHANGE_POST_INPUT:
+            const postData = {...state.postData };
+            postData[action.payload.name] = action.payload.value;
+            return {
+                ...state,
+                postData
             };
         case Types.POST_DELETE:
             const deletedID=action.payload.data;
