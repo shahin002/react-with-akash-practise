@@ -1,21 +1,22 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import {Link, withRouter} from 'react-router-dom';
+import {Link, useParams, withRouter} from 'react-router-dom';
 import {useSelector, useDispatch} from "react-redux";
 
-import {handleChangePostInput, storePostAction} from "../../../redux/backend/post/PostAction";
+import {getPostDetailAction, handleChangePostInput,postUpdateAction} from "../../../redux/backend/post/PostAction";
 
 
-const PostCreate = ({history}) => {
-    const {register, handleSubmit, errors, reset} = useForm();
+const PostEdit = ({history, match}, props) => {
+    const {id} = useParams();
+    const {register, handleSubmit, errors, getValues, reset} = useForm();
     const dispatch = useDispatch();
     const isLoading = useSelector((state) => state.post.isLoading);
-    const postAddMessage = useSelector((state) => state.post.postAddMessage);
-    const postAddStatus = useSelector((state) => state.post.postAddStatus);
+    const postUpdateMessage = useSelector((state) => state.post.postUpdateMessage);
+    const postUpdateStatus = useSelector((state) => state.post.postUpdateStatus);
     const postData = useSelector((state) => state.post.postData);
 
     const submitHandler = () => {
-        dispatch(storePostAction(postData));
+        dispatch(postUpdateAction(postData,postData.id));
     }
 
     const handleChangeTextInput = (name, value) => {
@@ -23,18 +24,13 @@ const PostCreate = ({history}) => {
     };
 
     useEffect(() => {
-        if (typeof postAddMessage !== 'undefined' || postAddMessage !== null) {
-            if (postAddStatus && postAddMessage.length > 0) {
-                // history.push("/posts");
-                // We can push to list OR, make feilds empty.
-                reset({
-                    title: "",
-                    body: ""
-                });
+        dispatch(getPostDetailAction(match.params.id))
+        if (typeof postUpdateMessage !== 'undefined' || postUpdateMessage !== null) {
+            if (postUpdateStatus && postUpdateMessage.length > 0) {
                 history.push("/posts");
             }
         }
-    }, [postAddStatus, postAddMessage, history]);
+    }, [postUpdateStatus, postUpdateMessage]);
 
     return (
         <>
@@ -43,13 +39,13 @@ const PostCreate = ({history}) => {
                 <div className="row items-push">
                     <div className="col-sm-8">
                         <h1 className="page-heading">
-                            Create Post
+                            Edit Post
                         </h1>
                     </div>
                     <div className="col-sm-4 text-right hidden-xs">
                         <ol className="breadcrumb push-10-t">
                             <li><Link to="/posts">Posts</Link></li>
-                            <li className="link-effect">Create Post</li>
+                            <li className="link-effect">Edit Post</li>
                         </ol>
                     </div>
                 </div>
@@ -66,7 +62,6 @@ const PostCreate = ({history}) => {
                                 <form className="form-horizontal push-10-t add-post-form"
                                       onSubmit={handleSubmit(submitHandler)} method="post"
                                       noValidate="novalidate">
-                                    {/* <input type="hidden" name="_token" value="c8ASC4EeZ1OISPDK9JBxaz85ZfzDrVpnbWtyW9DB" /> */}
 
                                     <div className="form-group">
                                         <div className="col-sm-12">
@@ -150,4 +145,4 @@ const PostCreate = ({history}) => {
     );
 };
 
-export default withRouter(PostCreate);
+export default withRouter(PostEdit);

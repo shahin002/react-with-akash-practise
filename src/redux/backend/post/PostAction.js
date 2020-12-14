@@ -99,6 +99,42 @@ export const storePostAction = (postData) => async (dispatch) => {
     dispatch({ type: Types.POST_CREATE, payload: data });
 };
 
+export const postUpdateAction = (postData, id) => async(dispatch) => {
+    let data = {
+        status: false,
+        message: "",
+        isLoading: true,
+        data: postData
+    };
+
+    dispatch({ type: Types.POST_UPDATE, payload: data });
+
+    await axios
+        .put(
+            `http://laravel07-starter.herokuapp.com/api/v1/administrator/posts/${id}`,
+            postData
+        )
+        .then((res) => {
+            const { response, meta } = res.data;
+            data.data = response.post;
+            data.message = response.message;
+            if (meta.status === 200) {
+                data.status = true;
+                toast.success(response.message);
+            } else {
+                data.status = false;
+                toast.error(response.message);
+            }
+        })
+        .catch((err) => {
+            data.message = err.data;
+            toast.error(data.message);
+        });
+
+    data.isLoading = false;
+    dispatch({ type: Types.POST_UPDATE, payload: data });
+};
+
 /**
  * delete post by id
  *
